@@ -61,16 +61,11 @@ This repository contains the documentation of setting up my Linux server, instal
    - Public IP Address: `http://54.74.89.202/`
 
 ## Optional Task: HTTPS Setup
-1. **Install Certbot and Obtain SSL Certificate:**
-   - While I didn't have a domain name, I used a free Dynamic DNS service (e.g., No-IP) to obtain a subdomain for SSL setup.
-   - If using a subdomain like `myproject.noip.com`, run the following:
-     ```bash
-     sudo certbot --apache -d myproject.noip.com
-     ```
-   - Certbot successfully configured HTTPS with the obtained SSL certificate.
+SSL Configuration
+To enable HTTPS, a self-signed SSL certificate was generated using OpenSSL. The certificate (/etc/ssl/certs/selfsigned.crt) and private key (/etc/ssl/private/selfsigned.key) were configured in Apache by modifying the default-ssl.conf file. While this certificate is not verified by a trusted Certificate Authority, it provides encryption for secure communication. I did a self-signed SSL certificate.
 
 2. **Check HTTPS Connection:**
-   - Access your website via `https://<Your-Server-IP>` to confirm the SSL certificate and HTTPS configuration.
+   -I Accessed my website via `https://54.74.89.202 ` to confirm the SSL certificate and HTTPS configuration.
 
 ## Conclusion
 This GitHub repository documents the steps taken to provision a server, set up Apache, deploy the HTML page, configure networking for HTTP traffic, and implement an optional HTTPS setup with a Dynamic DNS subdomain for SSL certificate verification. All configurations were made to ensure the website can be accessed securely from the web.
